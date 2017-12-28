@@ -1,0 +1,45 @@
+colorscheme railscasts
+let g:airline_theme='molokai'
+:set foldmethod=syntax
+
+set sw=4
+set mouse= 
+set number
+:%retab!
+
+autocmd VimEnter * set nospell
+autocmd VimEnter * set cindent
+autocmd VimEnter * set cino=N-s
+autocmd VimEnter * set cino+=g0
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black   ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgray ctermbg=24
+" let g:indent_guides_enable_on_vim_startup = 0
+let g:neocomplete#enable_at_startup = 0
+let g:pymode_lint_checkers = ['pylint']
+"let g:syntastic_mode_map = {'passive_filetypes': ['python']}
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+" nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>"
+
+" max line width = 80
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%121v.\+/"
